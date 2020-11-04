@@ -156,7 +156,7 @@ class Todo extends React.Component {
                             name="title" type="text" 
                             value={this.state.currentTodo.title} 
                             placeholder="New Item?"
-                            maxLength={30}
+                            maxLength={15}
                             />
 
                             <button  className="btn" id="sub-btn" type="submit">Add Item</button>
