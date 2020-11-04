@@ -1,5 +1,5 @@
 {
-  "homepage":"http://CrisCastell.github.io/market-list",
+  "homepage": "http://CrisCastell.github.io/market-list",
   "name": "memory-app",
   "version": "0.1.0",
   "private": true,
@@ -10,12 +10,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flip-move": "^3.0.4",
+    "react-lottie": "^1.2.3",
     "react-scripts": "3.4.3",
     "react-spring": "^8.0.27"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

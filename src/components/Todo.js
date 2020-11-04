@@ -1,10 +1,12 @@
 import React from 'react'
 import Item from './Item'
+import Loading from './Loading'
 
 class Todo extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            contentLoaded:true,
             name: "Cristiam",
             currentTodo:{
                 id:null,
@@ -38,13 +40,14 @@ class Todo extends React.Component {
         fetch('https://cristiamportfolioapis.herokuapp.com/todo/')
         .then(response=>response.json())
         .then(data => {
-            this.setState({todos:data})
+            this.setState({todos:data, contentLoaded:true})
         })
         .catch(err => console.log("Error: ", err))
     }
 
 
     componentDidMount(){
+        this.setState({contentLoaded:false})
         this.fetchFunc()
     }
 
@@ -152,15 +155,15 @@ class Todo extends React.Component {
                             <input id="inp" onChange={this.handleChange} 
                             name="title" type="text" 
                             value={this.state.currentTodo.title} 
-                            placeholder="New Task?"
+                            placeholder="New Item?"
                             maxLength={30}
                             />
 
-                            <button  className="btn" id="btn" type="submit">Add Item</button>
+                            <button  className="btn" id="sub-btn" type="submit">Add Item</button>
                         </div>
                     </form>
                     
-                    {todoList}
+                    {!this.state.contentLoaded ? <Loading /> : todoList}
                     
                 </div>
             </div>
